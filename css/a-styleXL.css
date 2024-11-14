@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Baloo+Chettan+2:wght@400..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* CONFIGURAÇÕES DO MENU HAMBURGER PARA TODAS AS PÁGINAS */
+.menu-hamburguer{
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: #9E7B64;
+    border-radius: 50px;
+}
+
+/* Extra Large */
+@media only screen and (min-width: 1200px){
+
+
+    /* Wrapper */
+    .wrapper-main{
+        width: 100vw;
+        height: 100vh;
+        margin: 0 0;
+    }
+
+    header{
+        background-color: #FFF8E8;
+        padding: 0.4rem 4rem ;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header li, a{
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* "Logo" header */
+    header #eco-brand h1{
+        font-size: 2.6rem;
+        font-family: "Anton", sans-serif;
+        background: linear-gradient(to right, #674636 , #9E7B64);
+        background-clip: text;
+        color: transparent; 
+    }
+
+    header #eco-brand p{
+        font-size: 1.2rem;
+        font-family: "Baloo Chettan 2", sans-serif;
+        font-weight: bold;
+        color: #AAB396;
+    }
+    
+    /* Barra de navegação */
+    header nav ul{
+        text-align: center;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    header nav ul li{
+        flex: 1 1 0;
+        min-width: 6rem;
+        font-size: 1.2rem;
+        font-family: "Baloo Chettan 2", "sans-serif";
+        font-weight: bold;
+        color: #FFF8E8;
+        margin: 0 1rem;
+        padding: 0.2rem 0.8rem;
+
+        background-color: #9E7B64;
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    header nav ul li:hover{
+        background-color: #674636;
+    }
+
+    /* CONFIG MAIN */
+    header{
+        margin-bottom: 20px;
+    }
+
+    section{
+        margin-bottom: 20px;
+    }
+
+    /* CONTEUDO E TITULO */
+    .conteudo-esquerda{ 
+        display: flex;
+        justify-content: start;
+        text-align: left;
+    }
+
+    .conteudo-centro{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .conteudo-direita{
+        display: flex;
+        justify-content: end;
+        text-align: right;
+    }
+
+    .titulo p {
+        margin: 1rem 4rem;
+    }
+
+
+    /* PÁGINA INICIAL -  url(../index.html) */
+
+    /* Banner Hero */
+    #hero {
+        width: 100vw;
+        height: 400px; 
+        background-image: url('../images/banner-hero.svg');
+        background-size: cover; 
+        background-position: center center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    #hero .conteudo-texto{
+        position: absolute;
+        top: 80px;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        color: #FFF8E8;
+        display: flex;
+        text-align: center;
+        align-items: center;
+
+    }
+
+    #hero .conteudo-texto h1{
+        font-family: "Anton", "sans-serif";
+        font-size: 4rem;
+        letter-spacing: 0.2rem;
+    }
+    
+    #hero .conteudo-texto p{
+        font-family: "Baloo Chettan 2", "sans-serif";
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+    
+    #hero #botao-saiba-mais{
+        position: absolute;
+        bottom: 60px;
+        width: 18rem;
+        height: 3.4rem;
+        border: 3px solid #747D5F;
+        background-color: #AAB396;
+        border-radius: 60px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #hero #botao-saiba-mais a{
+        text-decoration: none;
+        font-size: 2.2rem;
+        color: #FFF8E8;
+        font-family: "Anton", "sans-serif";
+    }
+
+    #hero #botao-saiba-mais:hover{
+        border: 3px solid #AAB396;
+        background-color: #747D5F;
+    }
+
+    /* Sobre o projeto */
+    #sobre{
+        width: 100vw;
+        height: auto;
+        padding: 20px 0;
+        background-color: #FFF8E8;
+    }
+    
+    #sobre .titulo{
+        font-family: "Anton", "sans-serif";
+        font-size: 3.4rem;
+        letter-spacing: 0.1rem;
+        color: #674636;
+    }
+
+    #sobre .descricao p{
+        font-family: "Baloo Chettan 2", "sans-serif";
+        font-weight: bold;
+        font-size: 1.4rem;
+        color: #747D5F;
+        margin: 0.4rem 2rem;
+        max-width: 80vw; /* ISSO AQUI IMPEDE O TEXTO DE FICAR ENORME!!!*/
+        text-align: justify;
+    }
+
+    /* Benefícios do projeto */
+    #beneficios{
+        width: 100vw;
+        height: auto;
+        padding: 20px 0;
+        background-color: #AAB396;
+    }
+
+    #beneficios .titulo{
+        font-family: "Anton", "sans-serif";
+        font-size: 3.4rem;
+        letter-spacing: 0.1rem;
+        color: #674636;
+    }
+
+    #beneficios .icone-beneficio{
+        width: 120px;
+        height: 120px;
+        border: 5px solid #FFF8E8;
+        background-color: #747D5F;
+        padding: 20px;
+        border-radius: 500px;
+    }
+
+    #beneficios .conteudo-esquerda{
+        margin-left: 2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    #beneficios .conteudo-direita{
+        margin-right: 2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    #beneficios .descricao span{
+        font-family: "Baloo Chettan 2", "sans-serif";
+        font-weight: bold;
+        font-size: 2rem;
+        text-decoration: underline;
+        color: #FFF8E8;
+    }
+
+    #beneficios .descricao p{
+        font-family: "Baloo Chettan 2", "sans-serif";
+        font-weight: bold;
+        font-size: 1.4rem;
+        color: #FFF8E8;
+        margin: 0.4rem 2rem;
+        max-width: 50vw; /* ISSO AQUI IMPEDE O TEXTO DE FICAR ENORME!!!*/
+    }
+
+    /* Se interessou? */
+    #interesse{
+        width: 100vw;
+        height: auto;
+        padding: 20px 0;
+        background-color: #694C4C;
+    }
+
+    #interesse .titulo{
+        font-family: "Anton", "sans-serif";
+        font-size: 3rem;
+        letter-spacing: 0.1rem;
+        color: #FFF8E8;
+    }
+
+    #interesse .descricao{
+        font-family: "Baloo Chettan 2", "sans-serif";
+        font-weight: bold;
+        font-size: 1.6rem;
+        color: #FFF8E8;
+    }
+
+    #btn-contato{
+        width: 16rem;
+        height: 3rem;
+        border: 3px solid #747D5F;
+        background-color: #AAB396;
+        border-radius: 60px;
+        text-align: center;
+        margin: 0.4rem 4rem;
+    }
+
+    #btn-contato a{
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: #FFF8E8;
+        font-family: "Anton", "sans-serif";
+    }
+
+    #btn-contato:hover{
+        border: 3px solid #AAB396;
+        background-color: #747D5F;
+    }
+    
+    /* PÁGINA SISTEMA  url(../sistema.html)*/   
+
+
+    /* PÁGINA CONTATO  url(../contato.html)*/
+    #titulo-contato{
+        font-family: "Anton", "sans-serif";
+        font-size: 2.5rem;
+        letter-spacing: 0.1rem;
+        color: #674636;
+    }
+}   
