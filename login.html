@@ -47,88 +47,10 @@
                                 <p>Contato</p>
                             </li>
                         </a>
-                        <a href="#">
-                            <li>
-                                <img src="images/icone-sistema.svg" alt="Ícone de ferramenta">
-                                <p>Sistema</p>
-                            </li>
-                        </a>
-
                     </ul>
                 </nav>  
             </div>
         </header>
-
-
-        <style>
-            /* Caixa principal de login */
-            #caixa-login {
-                width: 100vw;
-                background-color: #AAB396;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 20px;
-            }
-        
-            /* Formulário de login */
-            #caixa-login form {
-                background-color: #747D5F;
-                padding: 30px;
-                border-radius: 15px;
-                width: 40vw;
-                max-width: 500px;
-                display: flex;
-                flex-direction: column;
-            }
-        
-            #caixa-login form label {
-                font-family: "Baloo Chettan 2", "sans-serif";
-                font-weight: bold;
-                color: #FFF;
-                font-size: 1.3rem;
-            }
-        
-            #caixa-login form input {
-                font-family: "Arial", sans-serif;
-                font-size: 1rem;
-                padding: 12px;
-                margin-bottom: 20px;
-                border: 2px solid #AAB396;
-                border-radius: 5px;
-                outline: none;
-            }
-        
-            /* Link de "esqueci minha senha" */
-            .esqueci-senha {
-                font-family: "Arial", sans-serif;
-                color: #793b12;
-                text-decoration: none;
-                margin-bottom: 20px;
-                font-size: 0.9rem;
-            }
-        
-            .esqueci-senha:hover {
-                text-decoration: underline;
-            }
-        
-            /* Estilo do botão de login */
-            #caixa-login form button {
-                width: 16rem;
-                height: 3rem;
-                border: 3px solid #747D5F;
-                background-color: #AAB396;
-                border-radius: 60px;
-                text-align: center;
-                margin: 1rem 4rem;
-                text-align: center;
-            }
-        
-            #caixa-login form button:hover {
-                border: 3px solid #AAB396;
-                background-color: #747D5F;
-            }
-        </style>
         
         <!-- Conteúdo Principal -->
         <main>
@@ -142,11 +64,11 @@
                     <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Digite seu usuário">
         
                     <label for="senhaUsuario">Senha:</label>
-                    <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="Digite sua senha">
+                    <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="Digite sua senha - (123)">
         
                     <a href="#" class="esqueci-senha">Esqueci minha senha</a>
         
-                    <button type="button" id="btn-login">Autenticar</button>
+                    <button type="button" id="btn-login" onclick="iniciarSessao(event)">Autenticar</button>
                 </form>
             </section>
         </main>
@@ -162,11 +84,10 @@
 
         <script>
                 var statusLogin = sessionStorage.getItem('logado');
-                console.log(statusLogin)
             
                 if (statusLogin == 'true'){
-                    window.location.href = '/paginas/paginas_admin/main_admin.html'
-                }
+                    window.location.href = 'area-cliente.html'
+                } 
         </script>
     </div>
 </body>

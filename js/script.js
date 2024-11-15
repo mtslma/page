@@ -39,10 +39,9 @@ function enviarFormulario() {
         botaoEnviar.style.cursor = 'not-allowed'
         
     }
+
+    botaoEnviar.addEventListener('click', enviarFormulario);
 }
-
-botaoEnviar.addEventListener('click', enviarFormulario);
-
 
 // Função de formatação de textos dinâmica
 function formatarTexto(formato, campo){
@@ -80,26 +79,137 @@ function formatarTexto(formato, campo){
     }
 }
 
-// Funcionalidades de login
+// Funcionalidade de login
 var nomeUsuario = document.getElementById('nomeUsuario');
-var senhaUsuario = document.getElementById('senhaUsuario');
-
+var senhaUsuario = document.getElementById('senhaUsuario')
 var mensagemErro = document.getElementById('caixa-erro');
-
-document.getElementById("botao-logout").addEventListener("click", function() {
-    sessionStorage.setItem('logado', 'false') 
-});
 
 // Verificando se o login bate com as credenciais de acesso fixa
 // Usuário = admin || Senha = 123
-function iniciarSessao(event) {
-    if (nomeUsuario.value == 'admin' && senhaUsuario.value == '123'){
+function iniciarSessao() {
 
-        event.preventDefault(); // Impede o envio do formulário
-        window.location.href = "./paginas_admin/main_admin.html"; // Redireciona
-        sessionStorage.setItem('logado', 'true');    
-    } else{
-        mensagemErro.style.display = 'flex';
-        nomeUsuario.focus();
+    // Para esse exemplo validaremos apenas a senha
+    if (senhaUsuario.value == ''){
+        console.log('Campos vazios');
     }
+
+    if (senhaUsuario.value == '123'){
+        console.log('Login bem sucedido!')
+        window.location.href = "area-cliente.html"; // Redireciona
+        sessionStorage.setItem('logado', 'true');  
+        sessionStorage.setItem('usuario', nomeUsuario.value.replace(/\b\w/g, letra => letra.toUpperCase())); 
+
+    } else{
+        nomeUsuario.focus();
+        console.log('Login inválido')
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Evento para detectar a tecla "Enter"
+    var btnLogin = document.getElementById('btn-login');
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            btnLogin.click();
+        }
+    });
+    
+    // Função para fazer logout
+    var logoutButton = document.getElementById("btn-logout");
+
+    if (logoutButton) {
+        logoutButton.addEventListener("click", function() {
+            sessionStorage.setItem('logado', 'false');
+            sessionStorage.setItem('logado', '');
+            sessionStorage.clear();
+        });
+    }
+
+
+    // Configurando o nome do cliente na área do cliente
+    var campoSaudacoes = document.getElementById('campoSaudacoes');
+
+    campoSaudacoes.innerHTML = "Olá, " + sessionStorage.getItem('usuario') + "!";
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Pegando os elementos de link
+    var linkAssistente = document.getElementById('link-assistente');
+    var linkOrcamento = document.getElementById('link-orcamento');
+    var linkSimulacao = document.getElementById('link-simulacao');
+
+    // Pegando as seções
+    var secaoAssistente = document.getElementById('assistente');
+    var secaoOrcamento = document.getElementById('orcamento');
+    var secaoSimulacao = document.getElementById('simulacao');
+
+    function exibirSecao(secao) {
+        document.querySelectorAll('.secao').forEach(function(secao) {
+            secao.classList.add('secao-oculta');  // Adiciona a classe para ocultar
+        });
+
+        secao.classList.remove('secao-oculta');  // Remove a classe para exibir
+        console.log('Exibindo seção:', secao.id); 
+    }
+
+    if (linkAssistente) {
+        linkAssistente.addEventListener('click', function(event) {
+            event.preventDefault(); 
+            console.log('Botão Assistente clicado');  
+            exibirSecao(secaoAssistente);
+        });
+    }
+
+    if (linkOrcamento) {
+        linkOrcamento.addEventListener('click', function(event) {
+            event.preventDefault();
+            console.log('Botão Orçamento clicado');
+            exibirSecao(secaoOrcamento);
+        });
+    }
+
+    if (linkSimulacao) {
+        linkSimulacao.addEventListener('click', function(event) {
+            event.preventDefault();
+            console.log('Botão Simulação clicado');
+            exibirSecao(secaoSimulacao);
+        });
+    }
+
+    // Inicializa com a primeira seção visível
+    exibirSecao(secaoAssistente);
+    window.watsonAssistantChatOptions = {
+        integrationID: "274bb353-a96b-46ed-a5f8-df85b5c7f1a5", // The ID of this integration.
+        region: "us-south", // The region your integration is hosted in.
+        serviceInstanceID: "5040ba4f-1714-4329-912f-74d0d2702376", // The ID of your service instance.
+        element: document.getElementById('espaco-chatbot'),
+        // Oculta o launcher
+        showLauncher: false,
+        headerConfig: {
+            hideMinimizeButton: true,
+        },
+        layout: {
+          openChatByDefault: true,
+          hasContentMaxWidth: true,
+        }, onLoad: async (instance) => { 
+            instance.openWindow();
+            instance.updateLocale('pt-br');
+            await instance.render();   
+      }
+      };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+        document.head.appendChild(t);
+    });
+});
+
+
+// Configurações do Chatbot
+console.log(window.location.href)
+
+if (window.location.href == 'area-cliente.html'){
+
 }
