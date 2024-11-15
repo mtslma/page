@@ -1,11 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Baloo+Chettan+2:wght@400..800&display=swap');
-*{
+
+/* Definindo variáveis de cor */
+:root {
+    --cor-principal: #9E7B64;
+    --cor-secundaria: #674636;
+    --cor-terciaria: #AAB396;
+    --cor-quarta: #FFF8E8;
+    --cor-quinta: #747D5F;
+    --cor-sexta: #694C4C;
+    --cor-texto-claro: #FFF8E8;
+    --cor-texto-escuro: #503c2f;
+    --cor-texto-secundario: #AAB396;
+}
+
+/* Reset e padrão */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;  /* Para navegadores baseados em Webkit (Chrome, Safari, Edge) */
+}
+
 /* CONFIGURAÇÕES DO MENU HAMBURGER PARA TODAS AS PÁGINAS */
-.menu-hamburguer{
+.menu-hamburguer {
     display: none;
 }
 
@@ -19,51 +45,49 @@
 .menu-icon span {
     width: 25px;
     height: 3px;
-    background-color: #9E7B64;
+    background-color: var(--cor-secundaria);
     border-radius: 50px;
 }
 
 /* Extra Large */
-@media only screen and (min-width: 1200px){
-
-    /* Wrapper */
-    .wrapper-main{
+@media only screen and (min-width: 1200px) {
+    .wrapper-main {
         width: 100vw;
         height: 100vh;
         margin: 0 0;
     }
 
-    header{
-        background-color: #FFF8E8;
-        padding: 0.4rem 4rem ;
+    header {
+        background-color: var(--cor-quarta);
+        padding: 0.4rem 4rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    
-    header li, a{
+
+    header li, a {
         text-decoration: none;
         cursor: pointer;
     }
 
     /* "Logo" header */
-    header #eco-brand h1{
+    header #eco-brand h1 {
         font-size: 2.6rem;
         font-family: "Anton", sans-serif;
-        background: linear-gradient(to right, #674636 , #9E7B64);
+        background: linear-gradient(to right, var(--cor-secundaria), var(--cor-principal));
         background-clip: text;
-        color: transparent; 
+        color: transparent;
     }
 
-    header #eco-brand p{
+    header #eco-brand p {
         font-size: 1.2rem;
         font-family: "Baloo Chettan 2", sans-serif;
         font-weight: bold;
-        color: #AAB396;
+        color: var(--cor-texto-secundario);
     }
-    
+
     /* Barra de navegação */
-    header nav ul{
+    header nav ul {
         text-align: center;
         list-style-type: none;
         display: flex;
@@ -71,50 +95,47 @@
         align-items: center;
     }
 
-    header nav ul li{
-        flex: 1 1 0;
+    header nav ul li {
+        flex: 1;
         min-width: 6rem;
         font-size: 1.2rem;
-        font-family: "Baloo Chettan 2", "sans-serif";
+        font-family: "Baloo Chettan 2", sans-serif;
         font-weight: bold;
-        color: #FFF8E8;
+        color: var(--cor-quarta);
         margin: 0 1rem;
         padding: 0.2rem 0.8rem;
-
-        background-color: #9E7B64;
+        background-color: var(--cor-principal);
         border-radius: 30px;
         display: flex;
         justify-content: space-evenly;
         align-items: center;
     }
 
-    header nav ul li:hover{
-        background-color: #674636;
+    header nav ul li:hover {
+        background-color: var(--cor-secundaria);
     }
 
-    /* CONFIG MAIN */
-    header{
+    header {
         margin-bottom: 20px;
     }
 
-    section{
+    section {
         margin-bottom: 20px;
     }
 
-    /* CONTEUDO E TITULO */
-    .conteudo-esquerda{ 
+    .conteudo-esquerda {
         display: flex;
         justify-content: start;
         text-align: left;
     }
 
-    .conteudo-centro{
+    .conteudo-centro {
         display: flex;
         justify-content: center;
         text-align: center;
     }
 
-    .conteudo-direita{
+    .conteudo-direita {
         display: flex;
         justify-content: end;
         text-align: right;
@@ -124,53 +145,48 @@
         margin: 1rem 4rem;
     }
 
-
-    /* PÁGINA INICIAL -  url(../index.html) */
-
-    /* Banner Hero */
+    /* PÁGINA INICIAL - url(../index.html) */
     #hero {
         width: 100vw;
-        height: 400px; 
+        height: 400px;
         background-image: url('../images/banner-hero.svg');
-        background-size: cover; 
+        background-size: cover;
         background-position: center center;
         position: relative;
         display: flex;
         justify-content: center;
     }
 
-    #hero .conteudo-texto{
+    #hero .conteudo-texto {
         position: absolute;
         top: 80px;
         width: 100vw;
         display: flex;
         flex-direction: column;
-        color: #FFF8E8;
-        display: flex;
-        text-align: center;
+        color: var(--cor-quarta);
         align-items: center;
-
+        text-align: center;
     }
 
-    #hero .conteudo-texto h1{
-        font-family: "Anton", "sans-serif";
+    #hero .conteudo-texto h1 {
+        font-family: "Anton", sans-serif;
         font-size: 4rem;
         letter-spacing: 0.2rem;
     }
-    
-    #hero .conteudo-texto p{
-        font-family: "Baloo Chettan 2", "sans-serif";
+
+    #hero .conteudo-texto p {
+        font-family: "Baloo Chettan 2", sans-serif;
         font-size: 1.6rem;
         font-weight: bold;
     }
-    
-    #hero #botao-saiba-mais{
+
+    #hero #botao-saiba-mais {
         position: absolute;
         bottom: 60px;
         width: 18rem;
         height: 3.4rem;
-        border: 3px solid #747D5F;
-        background-color: #AAB396;
+        border: 3px solid var(--cor-quinta);
+        background-color: var(--cor-terciaria);
         border-radius: 60px;
         text-align: center;
         display: flex;
@@ -178,298 +194,215 @@
         align-items: center;
     }
 
-    #hero #botao-saiba-mais a{
+    #hero #botao-saiba-mais a {
         text-decoration: none;
         font-size: 2.2rem;
-        color: #FFF8E8;
-        font-family: "Anton", "sans-serif";
+        color: var(--cor-quarta);
+        font-family: "Anton", sans-serif;
     }
 
-    #hero #botao-saiba-mais:hover{
-        border: 3px solid #AAB396;
-        background-color: #747D5F;
+    #hero #botao-saiba-mais:hover {
+        border: 3px solid var(--cor-terciaria);
+        background-color: var(--cor-quinta);
     }
 
     /* Sobre o projeto */
-    #sobre{
+    #sobre {
         width: 100vw;
         height: auto;
         padding: 20px 0;
-        background-color: #FFF8E8;
-    }
-    
-    #sobre .titulo{
-        font-family: "Anton", "sans-serif";
-        font-size: 3.4rem;
-        letter-spacing: 0.1rem;
-        color: #674636;
+        background-color: var(--cor-quarta);
     }
 
-    #sobre .descricao p{
-        font-family: "Baloo Chettan 2", "sans-serif";
+    #sobre .titulo {
+        font-family: "Anton", sans-serif;
+        font-size: 3.4rem;
+        letter-spacing: 0.1rem;
+        color: var(--cor-secundaria);
+    }
+
+    #sobre .descricao p {
+        font-family: "Baloo Chettan 2", sans-serif;
         font-weight: bold;
         font-size: 1.4rem;
-        color: #747D5F;
+        color: var(--cor-quinta);
         margin: 0.4rem 2rem;
-        max-width: 80vw; /* ISSO AQUI IMPEDE O TEXTO DE FICAR ENORME!!!*/
+        max-width: 80vw;
         text-align: justify;
     }
 
     /* Benefícios do projeto */
-    #beneficios{
+    #beneficios {
         width: 100vw;
         height: auto;
         padding: 20px 0;
-        background-color: #AAB396;
+        background-color: var(--cor-terciaria);
     }
 
-    #beneficios .titulo{
-        font-family: "Anton", "sans-serif";
+    #beneficios .titulo {
+        font-family: "Anton", sans-serif;
         font-size: 3.4rem;
         letter-spacing: 0.1rem;
-        color: #674636;
+        color: var(--cor-secundaria);
     }
 
-    #beneficios .icone-beneficio{
+    #beneficios .icone-beneficio {
         width: 120px;
         height: 120px;
-        border: 5px solid #FFF8E8;
-        background-color: #747D5F;
+        border: 5px solid var(--cor-quarta);
+        background-color: var(--cor-quinta);
         padding: 20px;
         border-radius: 500px;
     }
 
-    #beneficios .conteudo-esquerda{
+    #beneficios .conteudo-esquerda, #beneficios .conteudo-direita {
         margin-left: 2rem;
-        display: flex;
-        align-items: center;
-    }
-
-    #beneficios .conteudo-direita{
         margin-right: 2rem;
         display: flex;
         align-items: center;
     }
 
-    #beneficios .descricao span{
-        font-family: "Baloo Chettan 2", "sans-serif";
+    #beneficios .descricao span {
+        font-family: "Baloo Chettan 2", sans-serif;
         font-weight: bold;
         font-size: 2rem;
         text-decoration: underline;
-        color: #FFF8E8;
+        color: var(--cor-quarta);
     }
 
-    #beneficios .descricao p{
-        font-family: "Baloo Chettan 2", "sans-serif";
+    #beneficios .descricao p {
+        font-family: "Baloo Chettan 2", sans-serif;
         font-weight: bold;
         font-size: 1.4rem;
-        color: #FFF8E8;
+        color: var(--cor-quarta);
         margin: 0.4rem 2rem;
-        max-width: 50vw; /* ISSO AQUI IMPEDE O TEXTO DE FICAR ENORME!!!*/
+        max-width: 50vw;
     }
 
     /* Se interessou? */
-    #interesse{
+    #interesse {
         width: 100vw;
         height: auto;
         padding: 20px 0;
-        background-color: #694C4C;
+        background-color: var(--cor-sexta);
     }
 
-    #interesse .titulo{
-        font-family: "Anton", "sans-serif";
+    #interesse .titulo {
+        font-family: "Anton", sans-serif;
         font-size: 3rem;
         letter-spacing: 0.1rem;
-        color: #FFF8E8;
+        color: var(--cor-quarta);
     }
 
-    #interesse .descricao{
-        font-family: "Baloo Chettan 2", "sans-serif";
+    #interesse .descricao {
+        font-family: "Baloo Chettan 2", sans-serif;
         font-weight: bold;
         font-size: 1.6rem;
-        color: #FFF8E8;
+        color: var(--cor-quarta);
     }
 
-    #btn-contato{
+    #btn-contato {
         width: 16rem;
         height: 3rem;
-        border: 3px solid #747D5F;
-        background-color: #AAB396;
+        border: 3px solid var(--cor-quinta);
+        background-color: var(--cor-terciaria);
         border-radius: 60px;
         text-align: center;
         margin: 0.4rem 4rem;
-    }
-
-    #btn-contato a{
-        text-decoration: none;
-        font-size: 1.8rem;
-        color: #FFF8E8;
-        font-family: "Anton", "sans-serif";
-    }
-
-    #btn-contato:hover{
-        border: 3px solid #AAB396;
-        background-color: #747D5F;
-    }
-    
-    /* PÁGINA CONTATO  url(../contato.html)*/
-    #titulo-contato{
-        width: 100vw;
-        height: 200px; 
-        background-image: url('../images/banner-contato.svg');
-        background-size: cover; 
-        background-position: center center;
-        position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    #titulo-contato p{
-        font-family: "Anton", "sans-serif";
-        font-size: 3rem;
-        letter-spacing: 0.1rem;
-        color: #FFF8E8;
-    }
-
-    /* Formulário de contato */
-    #area-contato {
-        width: 100vw;
-        border-radius: 5px; 
-        background-color: #AAB396; 
-        display: flex;
-        justify-content: space-around; 
-        align-items: start; 
-    }
-    
-    #area-contato form {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        width: 40vw;
-        margin: 2rem 4rem;
-        background-color: #747D5F;
-        padding-right: 20px;
-        padding-left: 20px;
-        border-radius: 15px;
-        display: flex;
-        justify-content: center;
-    }
-    
-    #area-contato form .titulo{
-        font-family: "Anton", "sans-serif";
-        font-size: 2.4rem;
-        letter-spacing: 0.1rem;
-        color: #503c2f;
-        font-weight: bolder;
-    }
-
-    #area-contato form div {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    #area-contato form div label {
-        font-family: "Baloo Chettan 2", "sans-serif";
-        font-weight: bold;
-        font-size: 1.2rem;
-        color: #333;
-    }
-    
-    /* Estilo dos inputs e textarea em um só comando */
-    #area-contato form div input,
-    #area-contato form div textarea {
-        border: 1px solid #FFF8E8;
-        border-radius: 5px;
-        padding: 8px;
-        font-size:  1rem;
-        font-family: "Baloo Chettan 2", "sans-serif";
-    }
-    
-    #area-contato form div textarea {
-        height: 100px;
-        resize: none;
-    }
-    
-    #area-contato button {
-        width: 25vw;
-        padding: 10px;
-        background-color: #333;
-        color: #FFF8E8;
-        border: none;
-        border-radius: 15px;
+    #btn-contato a {
         font-size: 1.6rem;
-        cursor: pointer;
-        align-self: center;
-        margin: 1rem 4rem;
-    }
-    
-    #area-contato button:hover {
-        background-color: #555;
+        text-decoration: none;
+        color: var(--cor-quarta);
+        font-family: "Baloo Chettan 2", sans-serif;
     }
 
-    /* Estilo da div de dica */
-    #dica{
-        width: 30vw;
-        margin: 2rem 4rem;
+    #btn-contato:hover {
+        background-color: var(--cor-quinta);
+        border: 3px solid var(--cor-terciaria);
+    }
+
+    /* Caixa de login */
+    #caixa-login {
+        width: 100vw;
+        background-color: var(--cor-principal);
+        display: flex;
+        align-items: center;
         justify-content: center;
         padding: 20px;
-        background-color: #747D5F;
+    }
+
+    /* Formulário de login */
+    #caixa-login form {
+        background-color: var(--cor-secundaria);
+        padding: 30px;
         border-radius: 15px;
+        width: 40vw;
+        max-width: 500px;
         display: flex;
         flex-direction: column;
-        align-self: center;
     }
 
-    #dica .titulo{
-        font-family: "Anton", "sans-serif";
+    /* Título */
+    #caixa-login .titulo p {
+        font-family: "Anton", sans-serif;
         font-size: 2.4rem;
         letter-spacing: 0.1rem;
-        color: #503c2f;
-        font-weight: bolder;
-        margin: 1rem 4rem;
+        font-weight: bold;
+        color: var(--cor-texto-claro);
+        margin-bottom: 20px;
     }
 
-    #dica p{
-        font-family: "Baloo Chettan 2", "sans-serif";
+    /* Estilo das labels */
+    #caixa-login form label {
+        font-family: "Baloo Chettan 2", sans-serif;
         font-weight: bold;
+        color: var(--cor-texto-claro);
         font-size: 1.3rem;
-        color: #FFF8E8;
-        text-align: center;
     }
-    
-    /* Botão de redirecionar para login */
-    #dica a{
+
+    /* Estilo dos inputs */
+    #caixa-login form input {
+        font-family: "Arial", sans-serif;
+        font-size: 1rem;
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 2px solid var(--cor-principal);
+        border-radius: 5px;
+        outline: none;
+    }
+
+    /* Link de "esqueci minha senha" */
+    .esqueci-senha {
+        font-family: "Arial", sans-serif;
+        color: var(--cor-link);
+        text-decoration: none;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+    }
+
+    .esqueci-senha:hover {
+        text-decoration: underline;
+    }
+
+    /* Estilo do botão de login */
+    #caixa-login form button {
         width: 16rem;
         height: 3rem;
-        border: 3px solid #747D5F;
-        background-color: #AAB396;
+        border: 3px solid var(--cor-secundaria);
+        background-color: var(--cor-principal);
         border-radius: 60px;
         text-align: center;
-        margin: 1rem 4rem;
-        text-align: center;
+        margin: 1rem;
+        align-self: center; /* Centraliza o botão */
     }
 
-    #dica a{
-        text-decoration: none;
-        font-size: 1.8rem;
-        color: #FFF8E8;
-        font-family: "Anton", "sans-serif";
+    #caixa-login form button:hover {
+        border: 3px solid var(--cor-principal);
+        background-color: var(--cor-secundaria);
     }
-
-    #dica a:hover{
-        border: 3px solid #AAB396;
-        background-color: #747D5F;
-    }
-
-    /* Estilo da mensagem de erro */
-    #mensagemForm {
-        font-family: "Baloo Chettan 2", "sans-serif";
-        font-weight: bold;
-        font-size: 1.4rem;
-        color: #793b12;
-        align-self: center;
-    }
-    
-
-}   
+}

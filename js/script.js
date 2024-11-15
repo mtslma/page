@@ -79,3 +79,27 @@ function formatarTexto(formato, campo){
         }
     }
 }
+
+// Funcionalidades de login
+var nomeUsuario = document.getElementById('nomeUsuario');
+var senhaUsuario = document.getElementById('senhaUsuario');
+
+var mensagemErro = document.getElementById('caixa-erro');
+
+document.getElementById("botao-logout").addEventListener("click", function() {
+    sessionStorage.setItem('logado', 'false') 
+});
+
+// Verificando se o login bate com as credenciais de acesso fixa
+// Usuário = admin || Senha = 123
+function iniciarSessao(event) {
+    if (nomeUsuario.value == 'admin' && senhaUsuario.value == '123'){
+
+        event.preventDefault(); // Impede o envio do formulário
+        window.location.href = "./paginas_admin/main_admin.html"; // Redireciona
+        sessionStorage.setItem('logado', 'true');    
+    } else{
+        mensagemErro.style.display = 'flex';
+        nomeUsuario.focus();
+    }
+}

@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="css/c-styleMD.css">
     <link rel="stylesheet" href="css/d-styleSM.css">
     <link rel="stylesheet" href="css/e-styleXS.css">
-    <title>Geo Balance</title>
+    <title>Fazer Login</title>
 </head>
 <body>
     <div class="wrapper-main">
 
-
         <!-- Cabeçalho da página -->
         <header>
+
             <a href="index.html">
                 <section id="eco-brand">
                     <h1>Geo Balance</h1>
@@ -23,40 +23,151 @@
                 </section>
             </a>
 
-            <!-- Barra de navegação -->
-            <nav id="nav-bar">
-                <ul>
-                    <a href="index.html">                    
-                        <li>
-                            <img src="images/icone-home.svg" alt="Ícone de casa">
-                            <p>Início</p>
-                        </li>
-                    </a>
+            <div id="container-nav-bar">
+                <!-- Menu Hamburger -->
+                <input type="checkbox" id="menu-hamburguer" class="menu-hamburguer">
+                <label for="menu-hamburguer" class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
 
+                <!-- Barra de navegação -->
+                <nav id="nav-bar">
+                    <ul>
+                        <a href="index.html">
+                            <li>
+                                <img src="images/icone-home.svg" alt="Ícone de login">
+                                <p>Início</p>
+                            </li>
+                        </a>
+                        <a href="contato.html">
+                            <li>
+                                <img src="images/icone-telefone.svg" alt="Ícone de telefone">
+                                <p>Contato</p>
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li>
+                                <img src="images/icone-sistema.svg" alt="Ícone de ferramenta">
+                                <p>Sistema</p>
+                            </li>
+                        </a>
 
-                    <a href="#">
-                        <li>
-                            <img src="images/icone-telefone.svg" alt="Ícone de telefone">
-                            <p href="#">Contato</p>
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li>
-                            <img src="images/icone-dinheiro.svg" alt="Ícone de dinheiro">
-                            <p href="#">Orçamento</p>
-                        </li>
-                    </a>
-                </ul>
-            </nav>
-
+                    </ul>
+                </nav>  
+            </div>
         </header>
 
-        <!-- Conteúdo Principal da página -->
+
+        <style>
+            /* Caixa principal de login */
+            #caixa-login {
+                width: 100vw;
+                background-color: #AAB396;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+            }
+        
+            /* Formulário de login */
+            #caixa-login form {
+                background-color: #747D5F;
+                padding: 30px;
+                border-radius: 15px;
+                width: 40vw;
+                max-width: 500px;
+                display: flex;
+                flex-direction: column;
+            }
+        
+            #caixa-login form label {
+                font-family: "Baloo Chettan 2", "sans-serif";
+                font-weight: bold;
+                color: #FFF;
+                font-size: 1.3rem;
+            }
+        
+            #caixa-login form input {
+                font-family: "Arial", sans-serif;
+                font-size: 1rem;
+                padding: 12px;
+                margin-bottom: 20px;
+                border: 2px solid #AAB396;
+                border-radius: 5px;
+                outline: none;
+            }
+        
+            /* Link de "esqueci minha senha" */
+            .esqueci-senha {
+                font-family: "Arial", sans-serif;
+                color: #793b12;
+                text-decoration: none;
+                margin-bottom: 20px;
+                font-size: 0.9rem;
+            }
+        
+            .esqueci-senha:hover {
+                text-decoration: underline;
+            }
+        
+            /* Estilo do botão de login */
+            #caixa-login form button {
+                width: 16rem;
+                height: 3rem;
+                border: 3px solid #747D5F;
+                background-color: #AAB396;
+                border-radius: 60px;
+                text-align: center;
+                margin: 1rem 4rem;
+                text-align: center;
+            }
+        
+            #caixa-login form button:hover {
+                border: 3px solid #AAB396;
+                background-color: #747D5F;
+            }
+        </style>
+        
+        <!-- Conteúdo Principal -->
         <main>
-            <h1>Informações do sistema aqui</h1>
+            <section id="caixa-login">
+                <form>
+                    <div class="titulo conteudo-centro">
+                        <p>Login</p>
+                    </div>
+
+                    <label for="nomeUsuario">Usuário:</label>
+                    <input type="text" name="nomeUsuario" id="nomeUsuario" placeholder="Digite seu usuário">
+        
+                    <label for="senhaUsuario">Senha:</label>
+                    <input type="password" name="senhaUsuario" id="senhaUsuario" placeholder="Digite sua senha">
+        
+                    <a href="#" class="esqueci-senha">Esqueci minha senha</a>
+        
+                    <button type="button" id="btn-login">Autenticar</button>
+                </form>
+            </section>
         </main>
 
-    </div>
 
+        <!-- Rodapé -->
+        <footer>
+            <h1>abacaxi easter egg</h1>
+        </footer>
+
+        <!-- Scripts para validar login, não consegui implementar em arquivo externo -->
+        <script src="js/script.js" defer></script>
+
+        <script>
+                var statusLogin = sessionStorage.getItem('logado');
+                console.log(statusLogin)
+            
+                if (statusLogin == 'true'){
+                    window.location.href = '/paginas/paginas_admin/main_admin.html'
+                }
+        </script>
+    </div>
 </body>
 </html>
