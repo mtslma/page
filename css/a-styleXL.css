@@ -26,7 +26,6 @@
 /* Extra Large */
 @media only screen and (min-width: 1200px){
 
-
     /* Wrapper */
     .wrapper-main{
         width: 100vw;
@@ -313,14 +312,164 @@
         background-color: #747D5F;
     }
     
-    /* PÁGINA SISTEMA  url(../sistema.html)*/   
-
-
     /* PÁGINA CONTATO  url(../contato.html)*/
     #titulo-contato{
-        font-family: "Anton", "sans-serif";
-        font-size: 2.5rem;
-        letter-spacing: 0.1rem;
-        color: #674636;
+        width: 100vw;
+        height: 200px; 
+        background-image: url('../images/banner-contato.svg');
+        background-size: cover; 
+        background-position: center center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+    #titulo-contato p{
+        font-family: "Anton", "sans-serif";
+        font-size: 3rem;
+        letter-spacing: 0.1rem;
+        color: #FFF8E8;
+    }
+
+    /* Formulário de contato */
+    #area-contato {
+        width: 100vw;
+        border-radius: 5px; 
+        background-color: #AAB396; 
+        display: flex;
+        justify-content: space-around; 
+        align-items: start; 
+    }
+    
+    #area-contato form {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 40vw;
+        margin: 2rem 4rem;
+        background-color: #747D5F;
+        padding-right: 20px;
+        padding-left: 20px;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+    }
+    
+    #area-contato form .titulo{
+        font-family: "Anton", "sans-serif";
+        font-size: 2.4rem;
+        letter-spacing: 0.1rem;
+        color: #503c2f;
+        font-weight: bolder;
+    }
+
+    #area-contato form div {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #area-contato form div label {
+        font-family: "Baloo Chettan 2", "sans-serif";
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #333;
+    }
+    
+    /* Estilo dos inputs e textarea em um só comando */
+    #area-contato form div input,
+    #area-contato form div textarea {
+        border: 1px solid #FFF8E8;
+        border-radius: 5px;
+        padding: 8px;
+        font-size:  1rem;
+        font-family: "Baloo Chettan 2", "sans-serif";
+    }
+    
+    #area-contato form div textarea {
+        height: 100px;
+        resize: none;
+    }
+    
+    #area-contato button {
+        width: 25vw;
+        padding: 10px;
+        background-color: #333;
+        color: #FFF8E8;
+        border: none;
+        border-radius: 15px;
+        font-size: 1.6rem;
+        cursor: pointer;
+        align-self: center;
+        margin: 1rem 4rem;
+    }
+    
+    #area-contato button:hover {
+        background-color: #555;
+    }
+
+    /* Estilo da div de dica */
+    #dica{
+        width: 30vw;
+        margin: 2rem 4rem;
+        justify-content: center;
+        padding: 20px;
+        background-color: #747D5F;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+    }
+
+    #dica .titulo{
+        font-family: "Anton", "sans-serif";
+        font-size: 2.4rem;
+        letter-spacing: 0.1rem;
+        color: #503c2f;
+        font-weight: bolder;
+        margin: 1rem 4rem;
+    }
+
+    #dica p{
+        font-family: "Baloo Chettan 2", "sans-serif";
+        font-weight: bold;
+        font-size: 1.3rem;
+        color: #FFF8E8;
+        text-align: center;
+    }
+    
+    /* Botão de redirecionar para login */
+    #dica a{
+        width: 16rem;
+        height: 3rem;
+        border: 3px solid #747D5F;
+        background-color: #AAB396;
+        border-radius: 60px;
+        text-align: center;
+        margin: 1rem 4rem;
+        text-align: center;
+    }
+
+    #dica a{
+        text-decoration: none;
+        font-size: 1.8rem;
+        color: #FFF8E8;
+        font-family: "Anton", "sans-serif";
+    }
+
+    #dica a:hover{
+        border: 3px solid #AAB396;
+        background-color: #747D5F;
+    }
+
+    /* Estilo da mensagem de erro */
+    #mensagemForm {
+        font-family: "Baloo Chettan 2", "sans-serif";
+        font-weight: bold;
+        font-size: 1.4rem;
+        color: #793b12;
+        align-self: center;
+    }
+    
+
 }   
